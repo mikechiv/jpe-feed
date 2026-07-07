@@ -34,7 +34,7 @@ def fetch_works():
     req = urllib.request.Request(
         API_URL,
         # CrossRef asks for a contact in the UA for their "polite pool"
-        headers={"User-Agent": "jpe-aop-feed/1.0 (mailto:you@example.com)"},
+        headers={"User-Agent": "jpe-aop-feed/1.0 (mailto:h0np16ys@addymail.com)"},
     )
     with urllib.request.urlopen(req, timeout=30) as resp:
         data = json.load(resp)

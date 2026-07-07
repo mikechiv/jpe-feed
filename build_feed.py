@@ -8,6 +8,7 @@ Data source: CrossRef REST API. Stdlib only - no pip installs needed.
 """
 
 import json
+import time
 import urllib.request
 from datetime import datetime, timezone
 from email.utils import format_datetime
@@ -23,10 +24,22 @@ BASE = f"https://api.crossref.org/journals/{ISSN}/works"
 UA = {"User-Agent": "jpe-feed/2.0 (mailto:you@example.com)"}
 
 
-def fetch(url):
-    req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.load(resp)["message"]["items"]
+def fetch(url, attempts=4):
+    """Fetch with retries: CrossRef occasionally returns transient 5xx errors."""
+    last_error = None
+    for attempt in range(attempts):
+        try:
+            req = urllib.request.Request(url, headers=UA)
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return json.load(resp)["message"]["items"]
+        except Exception as e:
+            last_error = e
+            wait = 10 * (attempt + 1)  # 10s, 20s, 30s
+            print(f"Fetch failed ({e}); retrying in {wait}s "
+                  f"[{attempt + 1}/{attempts}]")
+            if attempt < attempts - 1:
+                time.sleep(wait)
+    raise last_error
 
 
 def is_article(item):
@@ -67,7 +80,14 @@ def get_ahead_of_print():
 
 
 def get_latest_issue():
-    items = fetch(f"{BASE}?sort=published&order=desc&rows=100")
+    try:
+        items = fetch(f"{BASE}?sort=published&order=desc&rows=100")
+    except Exception as e:
+        # If this query keeps failing, ship the feed with AOP items only
+        # rather than failing the whole run; next scheduled run catches up.
+        print(f"WARNING: latest-issue query failed after retries ({e}); "
+              "building feed with ahead-of-print items only this run.")
+        return [], None
     issue_items = [w for w in items if is_article(w) and in_issue(w)]
     if not issue_items:
         return [], None

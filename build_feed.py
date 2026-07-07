@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 """
-Build an RSS feed of Journal of Political Economy "Ahead of Print" articles.
+Build an RSS feed of Journal of Political Economy articles, combining:
+  1. "Ahead of Print" articles (DOI registered, no volume/issue assigned)
+  2. Articles in the latest published issue
 
-Data source: CrossRef REST API (no scraping, no bot detection issues).
-JPE registers a DOI when an article is posted online ahead of print.
-Ahead-of-print records have no volume/issue assigned yet, which is how
-we separate them from articles already placed in an issue.
-
-Stdlib only - no pip installs needed.
+Data source: CrossRef REST API. Stdlib only - no pip installs needed.
 """
 
 import json
@@ -18,99 +15,133 @@ from xml.sax.saxutils import escape
 
 ISSN = "1537-534X"  # JPE online ISSN
 JOURNAL_NAME = "Journal of Political Economy"
-FEED_TITLE = f"{JOURNAL_NAME} - Ahead of Print"
-FEED_LINK = "https://www.journals.uchicago.edu/toc/jpe/0/ja"
-MAX_ITEMS = 40
+FEED_TITLE = f"{JOURNAL_NAME} - Ahead of Print + Latest Issue"
+FEED_LINK = "https://www.journals.uchicago.edu/journal/jpe"
 OUTPUT = "feed.xml"
 
-API_URL = (
-    f"https://api.crossref.org/journals/{ISSN}/works"
-    f"?sort=created&order=desc&rows=100"
-    f"&select=DOI,title,author,created,volume,issue,abstract,URL,type"
-)
+BASE = f"https://api.crossref.org/journals/{ISSN}/works"
+UA = {"User-Agent": "jpe-feed/2.0 (mailto:you@example.com)"}
 
 
-def fetch_works():
-    req = urllib.request.Request(
-        API_URL,
-        # CrossRef asks for a contact in the UA for their "polite pool"
-        headers={"User-Agent": "jpe-aop-feed/1.0 (mailto:h0np16ys@addymail.com)"},
-    )
+def fetch(url):
+    req = urllib.request.Request(url, headers=UA)
     with urllib.request.urlopen(req, timeout=30) as resp:
-        data = json.load(resp)
-    return data["message"]["items"]
+        return json.load(resp)["message"]["items"]
 
 
-def is_ahead_of_print(item):
+def is_article(item):
     if item.get("type") != "journal-article":
         return False
-    # Articles assigned to an issue have volume/issue set; AOP ones don't.
-    return not item.get("volume") and not item.get("issue")
+    title = (item.get("title") or [""])[0].lower()
+    # Skip errata/corrections; delete these two lines to keep them.
+    if title.startswith(("erratum", "correction", "corrigendum", "retraction")):
+        return False
+    return bool(item.get("title"))
 
 
-def author_string(item):
-    names = []
-    for a in item.get("author", []):
-        given, family = a.get("given", ""), a.get("family", "")
-        full = f"{given} {family}".strip()
-        if full:
-            names.append(full)
-    return ", ".join(names)
+def in_issue(item):
+    return bool(item.get("volume")) or bool(item.get("issue"))
 
 
-def created_datetime(item):
+def created_dt(item):
     ts = item.get("created", {}).get("timestamp")
     if ts:
         return datetime.fromtimestamp(ts / 1000, tz=timezone.utc)
     return datetime.now(timezone.utc)
 
 
-def build_rss(items):
+def published_dt(item):
+    for key in ("published", "published-online", "published-print"):
+        parts = item.get(key, {}).get("date-parts", [[None]])[0]
+        if parts and parts[0]:
+            y = parts[0]
+            m = parts[1] if len(parts) > 1 else 1
+            d = parts[2] if len(parts) > 2 else 1
+            return datetime(y, m, d, tzinfo=timezone.utc)
+    return created_dt(item)
+
+
+def get_ahead_of_print():
+    items = fetch(f"{BASE}?sort=created&order=desc&rows=100")
+    return [w for w in items if is_article(w) and not in_issue(w)]
+
+
+def get_latest_issue():
+    items = fetch(f"{BASE}?sort=published&order=desc&rows=100")
+    issue_items = [w for w in items if is_article(w) and in_issue(w)]
+    if not issue_items:
+        return [], None
+    newest = max(issue_items, key=published_dt)
+    vol, iss = newest.get("volume"), newest.get("issue")
+    latest = [w for w in issue_items
+              if w.get("volume") == vol and w.get("issue") == iss]
+    label = f"Volume {vol}" + (f", Issue {iss}" if iss else "")
+    return latest, label
+
+
+def author_string(item):
+    names = []
+    for a in item.get("author", []):
+        full = f"{a.get('given', '')} {a.get('family', '')}".strip()
+        if full:
+            names.append(full)
+    return ", ".join(names)
+
+
+def rss_item(item, section, date):
+    title = escape(item["title"][0])
+    doi = item["DOI"]
+    desc_bits = [f"[{section}]"]
+    authors = author_string(item)
+    if authors:
+        desc_bits.append(f"Authors: {authors}")
+    if item.get("abstract"):
+        desc_bits.append(escape(item["abstract"]))
+    return "\n".join([
+        "<item>",
+        f"<title>{title}</title>",
+        f"<link>https://doi.org/{escape(doi)}</link>",
+        f"<guid isPermaLink=\"false\">{escape(doi)}</guid>",
+        f"<category>{escape(section)}</category>",
+        f"<pubDate>{format_datetime(date)}</pubDate>",
+        f"<description>{escape('<br/><br/>'.join(desc_bits))}</description>",
+        "</item>",
+    ])
+
+
+def main():
+    aop = get_ahead_of_print()
+    issue, issue_label = get_latest_issue()
+
+    entries = []
+    seen = set()
+    for w in aop:
+        if w["DOI"] not in seen:
+            seen.add(w["DOI"])
+            entries.append(rss_item(w, "Ahead of Print", created_dt(w)))
+    for w in issue:
+        if w["DOI"] not in seen:
+            seen.add(w["DOI"])
+            entries.append(rss_item(w, issue_label, published_dt(w)))
+
     now = format_datetime(datetime.now(timezone.utc))
-    parts = [
+    rss = "\n".join([
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<rss version="2.0">',
         "<channel>",
         f"<title>{escape(FEED_TITLE)}</title>",
         f"<link>{escape(FEED_LINK)}</link>",
-        "<description>New JPE articles posted online ahead of print "
-        "(via CrossRef DOI registrations)</description>",
+        "<description>JPE ahead-of-print articles and the latest "
+        "published issue (via CrossRef)</description>",
         f"<lastBuildDate>{now}</lastBuildDate>",
-    ]
-    for item in items:
-        title = escape(item.get("title", ["Untitled"])[0])
-        doi = item["DOI"]
-        link = f"https://doi.org/{doi}"
-        authors = escape(author_string(item))
-        pub_date = format_datetime(created_datetime(item))
-        desc_bits = []
-        if authors:
-            desc_bits.append(f"Authors: {authors}")
-        if item.get("abstract"):
-            desc_bits.append(escape(item["abstract"]))
-        description = "<br/><br/>".join(desc_bits) or title
-        parts += [
-            "<item>",
-            f"<title>{title}</title>",
-            f"<link>{escape(link)}</link>",
-            f"<guid isPermaLink=\"false\">{escape(doi)}</guid>",
-            f"<pubDate>{pub_date}</pubDate>",
-            f"<description>{escape(description)}</description>",
-            "</item>",
-        ]
-    parts += ["</channel>", "</rss>"]
-    return "\n".join(parts)
-
-
-def main():
-    works = fetch_works()
-    aop = [w for w in works if is_ahead_of_print(w)]
-    aop.sort(key=created_datetime, reverse=True)
-    aop = aop[:MAX_ITEMS]
-    rss = build_rss(aop)
+        *entries,
+        "</channel>",
+        "</rss>",
+    ])
     with open(OUTPUT, "w", encoding="utf-8") as f:
         f.write(rss)
-    print(f"Wrote {OUTPUT} with {len(aop)} ahead-of-print articles")
+    print(f"Wrote {OUTPUT}: {len(aop)} ahead-of-print, "
+          f"{len(entries) - len(aop)} from {issue_label}")
 
 
 if __name__ == "__main__":

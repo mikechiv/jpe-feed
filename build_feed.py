@@ -15,7 +15,7 @@ from xml.sax.saxutils import escape
 
 ISSN = "1537-534X"  # JPE online ISSN
 JOURNAL_NAME = "Journal of Political Economy"
-FEED_TITLE = f"{JOURNAL_NAME} - Ahead of Print + Latest Issue"
+FEED_TITLE = f"{JOURNAL_NAME}"
 FEED_LINK = "https://www.journals.uchicago.edu/journal/jpe"
 OUTPUT = "feed.xml"
 

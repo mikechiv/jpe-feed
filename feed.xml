@@ -4,7 +4,7 @@
 <title>Journal of Political Economy</title>
 <link>https://www.journals.uchicago.edu/journal/jpe</link>
 <description>JPE ahead-of-print articles and the latest published issue (via CrossRef)</description>
-<lastBuildDate>Thu, 19 Nov 2026 23:58:12 +0000</lastBuildDate>
+<lastBuildDate>Fri, 20 Nov 2026 05:35:11 +0000</lastBuildDate>
 <item>
 <title>Market Response to Racial Uprisings</title>
 <link>https://doi.org/10.1086/745094</link>
@@ -12,14 +12,6 @@
 <category>Ahead of Print</category>
 <pubDate>Thu, 19 Nov 2026 17:56:32 +0000</pubDate>
 <description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Bocar A. Ba, Roman Rivera, Alexander Whitefield</description>
-</item>
-<item>
-<title>Unemployment Benefits and Unemployment in the Great Recession: The Role of Equilibrium Effects</title>
-<link>https://doi.org/10.1086/745090</link>
-<guid isPermaLink="false">10.1086/745090</guid>
-<category>Ahead of Print</category>
-<pubDate>Thu, 19 Nov 2026 17:52:48 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Marcus Hagedorn, Fatih Karahan, Iourii Manovskii, Kurt Mitman</description>
 </item>
 <item>
 <title>Intermediate Input Prices and the Labor Share</title>
@@ -30,12 +22,12 @@
 <description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Juanma Castro-Vincenzi, Benny Kleinman</description>
 </item>
 <item>
-<title>The Welfare Effects of Price Shocks and Household Relief Packages: Evidence from an Energy Crisis</title>
-<link>https://doi.org/10.1086/744933</link>
-<guid isPermaLink="false">10.1086/744933</guid>
+<title>Unemployment Benefits and Unemployment in the Great Recession: The Role of Equilibrium Effects</title>
+<link>https://doi.org/10.1086/745090</link>
+<guid isPermaLink="false">10.1086/745090</guid>
 <category>Ahead of Print</category>
-<pubDate>Fri, 13 Nov 2026 16:43:11 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Peter Levell, Martin O'Connell, Kate Smith</description>
+<pubDate>Thu, 19 Nov 2026 17:52:48 +0000</pubDate>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Marcus Hagedorn, Fatih Karahan, Iourii Manovskii, Kurt Mitman</description>
 </item>
 <item>
 <title>Noisy Global Value Chains</title>
@@ -46,12 +38,12 @@
 <description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Ha Bui, Zhen Huo, Andrei Levchenko, Nitya Pandalai-Nayar</description>
 </item>
 <item>
-<title>Beliefs and the Incentive Effects of Preferential College Admissions: Evidence from an Experiment and a Structural Model</title>
-<link>https://doi.org/10.1086/744916</link>
-<guid isPermaLink="false">10.1086/744916</guid>
+<title>The Welfare Effects of Price Shocks and Household Relief Packages: Evidence from an Energy Crisis</title>
+<link>https://doi.org/10.1086/744933</link>
+<guid isPermaLink="false">10.1086/744933</guid>
 <category>Ahead of Print</category>
-<pubDate>Wed, 11 Nov 2026 19:25:55 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Michela Maria Tincani, Fabian Kosse, Enrico Miglino</description>
+<pubDate>Fri, 13 Nov 2026 16:43:11 +0000</pubDate>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Peter Levell, Martin O'Connell, Kate Smith</description>
 </item>
 <item>
 <title>Two-Sided Search in International Markets</title>
@@ -62,12 +54,12 @@
 <description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Jonathan Eaton, David Jinkins, James Tybout, Daniel Yi Xu</description>
 </item>
 <item>
-<title>Implementing an Optimal Tax Plan with Short Term Debt</title>
-<link>https://doi.org/10.1086/744576</link>
-<guid isPermaLink="false">10.1086/744576</guid>
+<title>Beliefs and the Incentive Effects of Preferential College Admissions: Evidence from an Experiment and a Structural Model</title>
+<link>https://doi.org/10.1086/744916</link>
+<guid isPermaLink="false">10.1086/744916</guid>
 <category>Ahead of Print</category>
-<pubDate>Tue, 20 Oct 2026 18:09:48 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Wei Jiang, Thomas Sargent, Neng Wan</description>
+<pubDate>Wed, 11 Nov 2026 19:25:55 +0000</pubDate>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Michela Maria Tincani, Fabian Kosse, Enrico Miglino</description>
 </item>
 <item>
 <title>Welfare and the Act of Choosing</title>
@@ -76,6 +68,14 @@
 <category>Ahead of Print</category>
 <pubDate>Tue, 20 Oct 2026 18:09:48 +0000</pubDate>
 <description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: B. Douglas Berhneim, Kristy Kim, Dmitry Taubinsky</description>
+</item>
+<item>
+<title>Implementing an Optimal Tax Plan with Short Term Debt</title>
+<link>https://doi.org/10.1086/744576</link>
+<guid isPermaLink="false">10.1086/744576</guid>
+<category>Ahead of Print</category>
+<pubDate>Tue, 20 Oct 2026 18:09:48 +0000</pubDate>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Wei Jiang, Thomas Sargent, Neng Wan</description>
 </item>
 <item>
 <title>Closing Ranks: Organized Labor and Immigration</title>
@@ -142,22 +142,6 @@
 <description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Eric Richert</description>
 </item>
 <item>
-<title>Rethinking Reference Dependence: Wage Dynamics and Optimal Taxi Labor Supply</title>
-<link>https://doi.org/10.1086/744012</link>
-<guid isPermaLink="false">10.1086/744012</guid>
-<category>Ahead of Print</category>
-<pubDate>Fri, 11 Sep 2026 17:31:03 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Nick Buchholz, Matthew Shum, Haiqing Xu</description>
-</item>
-<item>
-<title>Equilibrium in the Market for Public School Teachers: District Wage Strategies and Teacher Comparative Advantage</title>
-<link>https://doi.org/10.1086/744049</link>
-<guid isPermaLink="false">10.1086/744049</guid>
-<category>Ahead of Print</category>
-<pubDate>Fri, 11 Sep 2026 17:31:03 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Barbara Biasi, Chao Fu, John Stromme</description>
-</item>
-<item>
 <title>Timing is Everything: Parental Professional Connections and Labor Market Entry</title>
 <link>https://doi.org/10.1086/744016</link>
 <guid isPermaLink="false">10.1086/744016</guid>
@@ -174,12 +158,68 @@
 <description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Benjamin Enke, Thomas Graeber, Ryan Oprea, Jeffrey Yang</description>
 </item>
 <item>
+<title>Equilibrium in the Market for Public School Teachers: District Wage Strategies and Teacher Comparative Advantage</title>
+<link>https://doi.org/10.1086/744049</link>
+<guid isPermaLink="false">10.1086/744049</guid>
+<category>Ahead of Print</category>
+<pubDate>Fri, 11 Sep 2026 17:31:03 +0000</pubDate>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Barbara Biasi, Chao Fu, John Stromme</description>
+</item>
+<item>
+<title>Rethinking Reference Dependence: Wage Dynamics and Optimal Taxi Labor Supply</title>
+<link>https://doi.org/10.1086/744012</link>
+<guid isPermaLink="false">10.1086/744012</guid>
+<category>Ahead of Print</category>
+<pubDate>Fri, 11 Sep 2026 17:31:03 +0000</pubDate>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Nick Buchholz, Matthew Shum, Haiqing Xu</description>
+</item>
+<item>
+<title>Who Values Democracy?</title>
+<link>https://doi.org/10.1086/743899</link>
+<guid isPermaLink="false">10.1086/743899</guid>
+<category>Ahead of Print</category>
+<pubDate>Mon, 31 Aug 2026 19:39:17 +0000</pubDate>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Max Miller</description>
+</item>
+<item>
+<title>Collusion through Common Leadership</title>
+<link>https://doi.org/10.1086/743900</link>
+<guid isPermaLink="false">10.1086/743900</guid>
+<category>Ahead of Print</category>
+<pubDate>Mon, 31 Aug 2026 19:39:17 +0000</pubDate>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Alejandro Herrera-Caicedo, Jessica Jeffers, Elena Prager</description>
+</item>
+<item>
+<title>The Long-Run Economic Effects of Medical Innovation and the Role of Opportunities</title>
+<link>https://doi.org/10.1086/743898</link>
+<guid isPermaLink="false">10.1086/743898</guid>
+<category>Ahead of Print</category>
+<pubDate>Mon, 31 Aug 2026 19:39:17 +0000</pubDate>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Sonia Bhalotra, Damian Clarke, Atheendar Venkataramani</description>
+</item>
+<item>
 <title>The Macroeconomic Dynamics of Labor Market Polices</title>
 <link>https://doi.org/10.1086/743915</link>
 <guid isPermaLink="false">10.1086/743915</guid>
 <category>Ahead of Print</category>
 <pubDate>Mon, 31 Aug 2026 19:39:17 +0000</pubDate>
 <description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Erik G. Hurst, Patrick Kehoe, Elena Pastorino, Thomas Winberry</description>
+</item>
+<item>
+<title>Not Learning from Others</title>
+<link>https://doi.org/10.1086/743914</link>
+<guid isPermaLink="false">10.1086/743914</guid>
+<category>Ahead of Print</category>
+<pubDate>Mon, 31 Aug 2026 19:39:17 +0000</pubDate>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: John Conlon, Malavika Mani, Gautam Rao, Matthew Ridley, Frank Schilbach</description>
+</item>
+<item>
+<title>Strategic Wishful Thinking: Implications for Forecasts</title>
+<link>https://doi.org/10.1086/743916</link>
+<guid isPermaLink="false">10.1086/743916</guid>
+<category>Ahead of Print</category>
+<pubDate>Mon, 31 Aug 2026 19:39:17 +0000</pubDate>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Snehal Banerjee, Jesse Davis, Naveen Gondhi</description>
 </item>
 <item>
 <title>Using Consumption Data to Derive Optimal Top Income and Capital Tax Rates</title>
@@ -198,44 +238,12 @@
 <description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Christina McGranaghan, Kirby Nielsen, Ted O’Donoghue, Jason Somerville, Charles D. Sprenger</description>
 </item>
 <item>
-<title>Not Learning from Others</title>
-<link>https://doi.org/10.1086/743914</link>
-<guid isPermaLink="false">10.1086/743914</guid>
+<title>The Economic Dynamics of City Structure: Evidence from Hiroshima's Recovery</title>
+<link>https://doi.org/10.1086/743334</link>
+<guid isPermaLink="false">10.1086/743334</guid>
 <category>Ahead of Print</category>
-<pubDate>Mon, 31 Aug 2026 19:39:17 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: John Conlon, Malavika Mani, Gautam Rao, Matthew Ridley, Frank Schilbach</description>
-</item>
-<item>
-<title>Collusion through Common Leadership</title>
-<link>https://doi.org/10.1086/743900</link>
-<guid isPermaLink="false">10.1086/743900</guid>
-<category>Ahead of Print</category>
-<pubDate>Mon, 31 Aug 2026 19:39:17 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Alejandro Herrera-Caicedo, Jessica Jeffers, Elena Prager</description>
-</item>
-<item>
-<title>Strategic Wishful Thinking: Implications for Forecasts</title>
-<link>https://doi.org/10.1086/743916</link>
-<guid isPermaLink="false">10.1086/743916</guid>
-<category>Ahead of Print</category>
-<pubDate>Mon, 31 Aug 2026 19:39:17 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Snehal Banerjee, Jesse Davis, Naveen Gondhi</description>
-</item>
-<item>
-<title>Who Values Democracy?</title>
-<link>https://doi.org/10.1086/743899</link>
-<guid isPermaLink="false">10.1086/743899</guid>
-<category>Ahead of Print</category>
-<pubDate>Mon, 31 Aug 2026 19:39:17 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Max Miller</description>
-</item>
-<item>
-<title>The Long-Run Economic Effects of Medical Innovation and the Role of Opportunities</title>
-<link>https://doi.org/10.1086/743898</link>
-<guid isPermaLink="false">10.1086/743898</guid>
-<category>Ahead of Print</category>
-<pubDate>Mon, 31 Aug 2026 19:39:17 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Sonia Bhalotra, Damian Clarke, Atheendar Venkataramani</description>
+<pubDate>Fri, 31 Jul 2026 21:28:12 +0000</pubDate>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Kohei Takeda, Atsushi Yamagishi</description>
 </item>
 <item>
 <title>Political Parties as Drivers of US Polarization: 1927–2018</title>
@@ -246,28 +254,12 @@
 <description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Nathan Canen, Chad Kendall, Francesco Trebbi</description>
 </item>
 <item>
-<title>The Economic Dynamics of City Structure: Evidence from Hiroshima's Recovery</title>
-<link>https://doi.org/10.1086/743334</link>
-<guid isPermaLink="false">10.1086/743334</guid>
+<title>How to Get Away with Merger: Stealth Consolidation and Its Effects on US Dialysis</title>
+<link>https://doi.org/10.1086/743329</link>
+<guid isPermaLink="false">10.1086/743329</guid>
 <category>Ahead of Print</category>
 <pubDate>Fri, 31 Jul 2026 21:28:12 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Kohei Takeda, Atsushi Yamagishi</description>
-</item>
-<item>
-<title>A Theory of Redistribution and Public Good Provision under Nondemocracy</title>
-<link>https://doi.org/10.1086/743332</link>
-<guid isPermaLink="false">10.1086/743332</guid>
-<category>Ahead of Print</category>
-<pubDate>Fri, 31 Jul 2026 21:28:12 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Nicola Persico</description>
-</item>
-<item>
-<title>Can Gifted Education Help Higher-Ability Boys from Disadvantaged Backgrounds?</title>
-<link>https://doi.org/10.1086/743389</link>
-<guid isPermaLink="false">10.1086/743389</guid>
-<category>Ahead of Print</category>
-<pubDate>Fri, 31 Jul 2026 21:28:12 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: David Card, Eric Chyn, Laura Giuliano</description>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Thomas G. Wollmann</description>
 </item>
 <item>
 <title>From Heterogeneous Firms to Heterogeneous Trade Elasticities: The Aggregate Implications of Firm Export Decisions</title>
@@ -278,20 +270,20 @@
 <description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Rodrigo Adão, Costas Arkolakis, Sharat Ganapati</description>
 </item>
 <item>
-<title>How to Get Away with Merger: Stealth Consolidation and Its Effects on US Dialysis</title>
-<link>https://doi.org/10.1086/743329</link>
-<guid isPermaLink="false">10.1086/743329</guid>
+<title>Can Gifted Education Help Higher-Ability Boys from Disadvantaged Backgrounds?</title>
+<link>https://doi.org/10.1086/743389</link>
+<guid isPermaLink="false">10.1086/743389</guid>
 <category>Ahead of Print</category>
 <pubDate>Fri, 31 Jul 2026 21:28:12 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Thomas G. Wollmann</description>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: David Card, Eric Chyn, Laura Giuliano</description>
 </item>
 <item>
-<title>Safe Spaces: Shelters or Tribes?</title>
-<link>https://doi.org/10.1086/743388</link>
-<guid isPermaLink="false">10.1086/743388</guid>
+<title>A Theory of Redistribution and Public Good Provision under Nondemocracy</title>
+<link>https://doi.org/10.1086/743332</link>
+<guid isPermaLink="false">10.1086/743332</guid>
 <category>Ahead of Print</category>
-<pubDate>Fri, 31 Jul 2026 19:11:41 +0000</pubDate>
-<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Jean Tirole</description>
+<pubDate>Fri, 31 Jul 2026 21:28:12 +0000</pubDate>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Nicola Persico</description>
 </item>
 <item>
 <title>The Demand for Mobility: Evidence from an Experiment with Uber Riders</title>
@@ -300,6 +292,14 @@
 <category>Ahead of Print</category>
 <pubDate>Fri, 31 Jul 2026 19:11:41 +0000</pubDate>
 <description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Peter Christensen, Gustavo Nino, Adam Osman</description>
+</item>
+<item>
+<title>Safe Spaces: Shelters or Tribes?</title>
+<link>https://doi.org/10.1086/743388</link>
+<guid isPermaLink="false">10.1086/743388</guid>
+<category>Ahead of Print</category>
+<pubDate>Fri, 31 Jul 2026 19:11:41 +0000</pubDate>
+<description>[Ahead of Print]&lt;br/&gt;&lt;br/&gt;Authors: Jean Tirole</description>
 </item>
 <item>
 <title>Front Matter</title>
